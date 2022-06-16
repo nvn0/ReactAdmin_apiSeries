@@ -1,5 +1,5 @@
 import React from "react";
-import {List, Datagrid, TextField, SimpleForm, TextInput, Edit, Filter, EditButton, NumberField, DateField, ReferenceField} from 'react-admin';
+import {List, Datagrid, TextField, SimpleForm, TextInput, Edit, NumberInput, Filter, EditButton, NumberField, DateField, ReferenceField} from 'react-admin';
 
 
 const postFilter = [
@@ -12,7 +12,7 @@ const postFilter = [
 export const CategoriasList = () => (
     <List filters={postFilter}>
         <Datagrid>
-            <TextField source="id" />
+            <NumberField source="id" />
             <TextField source="Nome" />
             <EditButton />
         </Datagrid>
@@ -23,7 +23,7 @@ export const CategoriasList = () => (
 export const CategoriasEdit = () => (
     <Edit>
         <SimpleForm>
-              <TextInput source = "id" />
+              <NumberInput source = "id" />
               <TextInput source = "Nome" />
         </SimpleForm>
     </Edit>

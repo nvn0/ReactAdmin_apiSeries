@@ -1,6 +1,6 @@
 import React from "react";
-import {List, Filter, Datagrid, TextField, NumberField, DateField, ReferenceManyField, ReferenceManyToManyField, ChipField, SingleFieldList, SimpleShowLayout, Show, ReferenceField, EditButton, Edit, SimpleForm, TextInput, ReferenceInput, SelectInput} from 'react-admin';
-//import { ReferenceManyToManyField } from '@react-admin/ra-relationships';
+import {List, Filter, Datagrid, TextField, NumberField, DateField, ReferenceManyField, ChipField, SingleFieldList, SimpleShowLayout, Show, ReferenceField, EditButton, Edit, SimpleForm, TextInput, ReferenceInput, SelectInput, NumberInput} from 'react-admin';
+//import { ReferenceManyToManyField } from 'ra-relationships';
 //import {ColorField, ColorInput} from 'react-admin-color-input';
 
 
@@ -24,11 +24,11 @@ const postFilter = [
 export const SeriesList = () => (
     <List filters={postFilter}>
         <Datagrid>
-            <TextField source="id" />
+            <NumberField source="id" />
             <TextField source="Nome" />
             <NumberField source="Temporadas" />
-            <DateField source="Episodios" />
-            <DateField source="plataforma" />
+            <NumberField source="Episodios" />
+            <TextField source="plataforma" />
             <EditButton />
         </Datagrid>
     </List>
@@ -44,16 +44,15 @@ export const SeriesList = () => (
 export const SeriesEdit = () => (
   <Edit>
       <SimpleForm>
-            <TextInput source = "id" />
+            <NumberInput source = "id" />
             <TextInput source = "Nome" />
-            <TextInput source = "Temporadas" />
-            <TextInput source = "Episodios" />
-            <TextInput source = "Plataforma" />
+            <NumberInput source = "Temporadas" />
+            <NumberInput source = "Episodios" />
       </SimpleForm>
   </Edit>
 );
 
-
+// <TextInput source = "Plataforma" />
 
 /*
 export const SeriesEdit = props => (
@@ -70,9 +69,8 @@ export const SeriesEdit = props => (
 
 
 
-
-
-/* export const BookShow = () => (
+/*
+export const PalataformaShow = () => (
     <Show>
         <SimpleShowLayout>
             <TextField source="Plataforma" />
@@ -88,6 +86,6 @@ export const SeriesEdit = props => (
             <EditButton />
         </SimpleShowLayout>
     </Show>
-); */
+);*/
 
 
